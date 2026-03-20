@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vitest/config';
 import vue from '@vitejs/plugin-vue';
 import VueSetupExtend from 'vite-plugin-vue-setup-extend';
 import AutoImport from 'unplugin-auto-import/vite';
@@ -27,5 +27,9 @@ export default defineConfig({
 	},
 	define: {
 		__VUE_PROD_HYDRATION_MISMATCH_DETAILS__: "true",
+	},
+	test: {
+		environment: 'jsdom',
+		globals: true,
 	},
 });
